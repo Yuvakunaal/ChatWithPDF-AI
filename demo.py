@@ -1,3 +1,3 @@
 '''
-This File is just for testing anything new idea
+This File is just for testing any new idea
 '''
