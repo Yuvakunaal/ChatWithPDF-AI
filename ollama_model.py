@@ -24,18 +24,24 @@ def is_general_greeting(query):
 def ollama_call(pdf_text, user_question):
     # Check if this is a general greeting not related to the PDF
     if is_general_greeting(user_question):
-        if user_question.lower().startswith(('hello', 'hi', 'hey', 'greetings')):
-            return "Hello! I'm here to help you with questions about your PDF document. How can I assist you today?"
-        elif user_question.lower().startswith(('how are you', 'what\'s up')):
-            return "I'm doing well, thank you! Ready to help you explore the content of your PDF document."
-        elif user_question.lower().startswith(('thank', 'appreciate')):
-            return "You're welcome! I'm happy to help with your PDF questions."
-        elif user_question.lower().startswith(('bye', 'goodbye')):
-            return "Goodbye! Feel free to return if you have more questions about your PDF."
-        elif user_question.lower().startswith(('who are you', 'what can you do')):
-            return "I'm a PDF assistant specialized in extracting and analyzing content from PDF documents. I can help you find information, summarize content, and answer questions about your uploaded PDF files."
-        elif user_question.lower().startswith('help'):
-            return "I can help you analyze PDF documents. Just upload a PDF and ask questions about its content. Try asking things like 'What is this document about?' or 'Summarize the main points'."
+        if user_question.lower().startswith(('hello', 'hi', 'hey', 'greetings', 'yo', 'wassup', 'sup', 'hola', 'namaste', 'heyy', 'hiii', 'hey bro', 'hey man')):
+            return "Hello 👋 I'm here to help you with anything in your PDF. Just ask what you want to know!"
+
+        elif user_question.lower().startswith(("how are you", "what's up", "how's everything", "how are things", "doing good", "doing fine", "superb", "fine", "awesome", "great", "fantastic", "amazing", "cool", "perfect", "nice", "mind blowing", "insane")):
+            return "I'm doing great and ready to analyze your PDF! Ask me anything from summaries to specific information."
+
+        elif user_question.lower().startswith(('thank', 'appreciate', 'thanks a lot', 'thank you so much', 'tysm', 'thanks buddy', 'thank you bro', 'thanks dear', 'thanks man')):
+            return "You're welcome! Always happy to help you understand your PDF better."
+
+        elif user_question.lower().startswith(('bye', 'goodbye', 'ok bye', 'see you', 'catch you later', 'tata', 'cya', 'gtg', 'take care', 'good night', 'goodnight')):
+            return "Goodbye! Come back anytime when you want help with another PDF."
+
+        elif user_question.lower().startswith(('who are you', 'what can you do', 'tell about yourself', 'introduce yourself', 'what is your work', 'what is your purpose')):
+            return "I'm an AI PDF assistant. I extract the full PDF and answer your questions — summaries, insights, topics, tables, keypoints, anything."
+
+        elif user_question.lower().startswith(('help', 'assist', 'guide me', 'how to use', 'usage', 'what to do', 'confused')):
+            return "Upload a PDF and ask anything about it — like 'summarize', 'explain', 'extract dates', 'list tables', 'find topics', etc. I'll read and answer."
+
         else:
             return "I'm here to help you with your PDF document. What would you like to know about it?"
 
